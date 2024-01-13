@@ -16,9 +16,11 @@ class _home_pageState extends State<home_page> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.background,
-      drawer: custom_drawer(),
-      appBar: AppBar(),
-      body: custom_body(),
+      drawer: const mydrawer(),
+      appBar: AppBar(
+        title: Center(child: Text("B r o w s e r")),
+      ),
+      body: const custom_body(),
     );
   }
 }

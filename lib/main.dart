@@ -1,9 +1,14 @@
 import 'package:browser/pages/home_page.dart';
-import 'package:browser/pages/theme_page.dart';
+import 'package:browser/pages/light_theme_page.dart';
+import 'package:browser/pages/theme_provider_page.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const MyMaterialApp());
+  runApp(ChangeNotifierProvider(
+    create: (context) => ThemeProvider(),
+    child: const MyMaterialApp(),
+  ));
 }
 
 class MyMaterialApp extends StatelessWidget {
@@ -12,7 +17,8 @@ class MyMaterialApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: light_theme,
+      debugShowCheckedModeBanner: false,
+      theme: Provider.of<ThemeProvider>(context).themeData,
       home: home_page(),
     );
   }
