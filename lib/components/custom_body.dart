@@ -18,7 +18,9 @@ class _custom_bodyState extends State<custom_body> {
         await launchUrl(Uri.parse(url));
       }
       // ignore: empty_catches
-    } catch (e) {}
+    } catch (e) {
+      print(e.toString());
+    }
   }
 
   @override
